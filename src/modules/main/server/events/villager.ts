@@ -16,5 +16,6 @@ export class VillagerEvent extends RpgEvent {
             talkWith: this
         })
         player.gold += 10
+        player.changeMap('lockheedmap');
     }
 } 
