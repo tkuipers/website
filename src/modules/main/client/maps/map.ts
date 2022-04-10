@@ -8,7 +8,8 @@ import { Spritesheet } from '@rpgjs/client'
         '[A]Wall-Up_pipo': require('./assets/[A]Wall-Up_pipo.png'),
         '[A]WaterFall_pipo': require('./assets/[A]WaterFall_pipo.png'),
         '[A]Water_pipo': require('./assets/[A]Water_pipo.png'),
-        '[Base]BaseChip_pipo': require('./assets/[Base]BaseChip_pipo.png')
+        '[Base]BaseChip_pipo': require('./assets/[Base]BaseChip_pipo.png'),
+        'Interiors_32x32': require('./assets/Interiors_32x32.png')
     }
 })
 export class MapTilesets {}
