@@ -26,9 +26,5 @@ jobs:
         with: 
           name: standalone-site
           path: dist/standalone
-  deploy:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
       
       
