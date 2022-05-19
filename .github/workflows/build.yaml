@@ -9,21 +9,26 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 14.x
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm test
+          node-version: 14.x
+      - name: CI
+        run: npm ci
+      - name: Test
+        run: npm test
+      - name: Build
+        run: NODE_ENV=production RPG_TYPE=rpg npm run build
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v2
+        with: 
+          name: standalone-site
+          path: dist/standalone
   deploy:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: deploy
-        run: NODE_ENV=production RPG_TYPE=rpg npm run build
+      
       
